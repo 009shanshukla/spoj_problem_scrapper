@@ -31,7 +31,7 @@ def get_links():
 	print("Links Downloaded successfully\n")
 
 
-def get_ques():
+def get_ques(count):
 	f = open('problem_tag_modified.txt','r')
 	prob = open('problems.txt','w')
 	num = 1
@@ -44,12 +44,31 @@ def get_ques():
 			prob.write(str(num)+":-\n"+table1.text)
 			num = num+1
 			prob.write("****************************************************************************************************************\n")
+			if num==count:
+				break
 
 
 if __name__ == '__main__':
 
 	print("Welcome to SPOJ PROBLEM SCRAPPER\n")
-	print("Getting Links From Server\n")		
-	get_links()
-	get_ques()	
-
+	while 1:
+		print("To Agree press 1 or to disagree press 2\n")
+		ans = int(input())
+		if ans == 1:
+			print("Getting Links From Server ,Please Wait :)\n")		
+			get_links()
+			while 1:
+				print("How many question do you want to scrap ?the more you want the more time it will take :) max(1-634)\n")
+				count = int(input("enter :"))
+				if count<=634 and count>=1:
+					print("Please Wait\n")	
+					get_ques(count)
+					print("Your task is completed, BYE BYE \n")
+					exit()
+				else :
+					print("only 1 to 634 ques are available :) press again\n")
+		elif ans == 2:
+			exit()	
+		else:
+			print("you have entered wrongly , press again\n") 
+		
