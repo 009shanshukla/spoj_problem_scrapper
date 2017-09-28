@@ -37,6 +37,8 @@ def get_links():         # function to get links and tags and store them in hidd
 				fpm.write(clean+"\n")						#now good tag data is storing in new file
 	
 	print("Links Downloaded successfully\n")
+	f.close()
+	fpm.close()
 
 
 def get_ques(count):                                      #question are parsed here along with tag from above stored file
@@ -60,6 +62,8 @@ def get_ques(count):                                      #question are parsed h
 			
 			if num==count:
 				break
+	f.close()
+	lol.close()		
 			
 			
 			#print(lines[line+1])
