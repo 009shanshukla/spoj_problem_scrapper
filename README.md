@@ -5,9 +5,23 @@ spoj_problem_scrapper is a multithreaded Python Tool which crawls the whole spoj
 
 Data searching, Data harvesting and data analytics are done as a seperate program. Multithreading makes program fast as it can crawl more links at a time and using set to store problem text and then save onto text, increases running time as it does not require to open text file each time.
 
-###Tool :- Python3, bs4, requests 
+### Requirements 
+
+- Python3
+- bs4
+- requests
+- urllib 
+
+### Specifications
+
+- Multithreading
+
+- No repetion of problems (As link is visited only once)
+
+- Storing Onto file is fast (Sets are used so that file is not opened frequently)
 
 ![](https://github.com/009shanshukla/spoj_problem_scrapper/blob/master/1.png)  
+
 
 
 
